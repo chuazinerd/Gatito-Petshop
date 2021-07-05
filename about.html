@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br"></html>
 <html>
-   <head>
-       <meta charset="UTF-8">  
-       <title>Gatito PetShop</title>
-       <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gatito Petshop</title>
     <link rel="stylesheet" href="css/reset.css">
@@ -12,49 +10,48 @@
 </head>
 <body>
     <header class="header">
-        <figure class="header-logo">
-            <img src="assets/img/logo.png" alt="Logo" class="header-img">
+        <figure class="header__logo">
+            <img src="assets/img/logo.png" alt="Logo" class="header__img">
         </figure>
-        <nav class="header-menu">
-            <ul class="menu-list">
-                <li class="menu-links">
-                    <a href="index.html" class="menu-link">Página inicial</a>
-                    <a href="about.html" class="menu-link">Sobre nós</a>
-                    <a href="index.html" class="menu-link">Cães</a>
-                    <a href="index.html" class="menu-link">Gatos</a>
-                    <a href="index.html" class="menu-link">Pássaros</a>
-                </li>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li class="menu__links"><a href="index.html" class="menu__link">Página inicial</a></li>
+                <li class="menu__links"><a href="about.html" class="menu__link">Sobre nós</a></li>
+                <li class="menu__links"><a href="collection.html" class="menu__link">Cães</a></li>
+                <li class="menu__links"><a href="collection.html" class="menu__link">Gatos</a></li>
+                <li class="menu__links"><a href="collection.html" class="menu__link">Pássaros</a></li>
+                <li class="menu__links"><a href="contact.html" class="menu__link">Contato</a></li>
             </ul>
         </nav>
     </header>
-
-  <article class="about">
-      <div class="about-title">
-          <h1 class="about-h1">Sobre nós</h1>
-          <div class="about-breadcrumb breadcrumb">
-              <a href="index.html" class="breadcrumb-link">Home</a>
-              <img src="assets/img/arrow.svg" alt="seta" class="breadcrumb-img">
-              <a href="about.html" class="breadcrumb-link">Sobre nós</a>
-          </div>  
-      </div>
-      <div class="about-content">
-          <img src="assets/img/dog-cat.jpg" alt="dog and cat" class="about-img"/>
-          <p class="about-intro">“Como criança eu olharia para as estrelas perguntando, quem sou eu, porquê estou aqui? haverá vida lá fora? o que acontece quando morremos? eu esperava que, talvez, quando morrer as minhas questões fossem respondidas. Encontrar o Livro de Urântia mostrou-me que as respostas já estão aqui.”</p>
-        <div class="about-split">
-            <img src="assets/img/about.png" alt="Gatito" class="about-img-description">
-            <div class="about-txt">
-                <p class="about-p">“Como criança eu olharia para as estrelas perguntando, Quem sou eu, Porquê estou aqui? Haverá vida lá fora? O que acontece quando morremos? Eu esperava que, talvez, quando morrer as minhas questões fossem respondidas. Encontrar o Livro de Urântia mostrou-me que as respostas já estão aqui.”</p>
-                <p class="about-p">“Como criança eu olharia para as estrelas perguntando, Quem sou eu, Porquê estou aqui? Haverá vida lá fora? O que acontece quando morremos? Eu esperava que, talvez, quando morrer as minhas questões fossem respondidas. Encontrar o Livro de Urântia mostrou-me que as respostas já estão aqui.”</p>
-                <p class="about-p">“Como criança eu olharia para as estrelas perguntando, Quem sou eu, Porquê estou aqui? Haverá vida lá fora? O que acontece quando morremos? Eu esperava que, talvez, quando morrer as minhas questões fossem respondidas. Encontrar o Livro de Urântia mostrou-me que as respostas já estão aqui.”</p>
+    
+    <article class="about">
+        <div class="about__title">
+            <h1 class="about__h1">Sobre nós</h1>
+            <div class="about__breadcrumb breadcrumb">
+                <a href="index.html" class="breadcrumb__link">Home</a>
+                <img src="assets/img/arrow.svg" alt="Seta" class="breadcrumb__img" />
+                <a href="about.html" class="breadcrumb__link">Sobre nós</a>
             </div>
         </div>
+        <div class="about__content">
+            <img src="assets/img/dog-cat.jpg" alt="Dog and cat" class="about__img" />
+            <p class="about__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ipsum felis, ultricies ut semper malesuada, luctus at enim. Ut sodales iaculis libero. Sed hendrerit tellus eu dui hendrerit rhoncus. Aliquam eget risus est.</p>
+            <div class="about__split">
+                <img src="assets/img/about.png" alt="Gatito" class="about__img-description" />
+                <div class="about__txt">
+                    <p class="about__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ipsum felis, ultricies ut semper malesuada, luctus at enim. Ut sodales iaculis libero. Sed hendrerit tellus eu dui hendrerit rhoncus. Aliquam eget risus est.</p>
+                    <p class="about__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ipsum felis, ultricies ut semper malesuada, luctus at enim. Ut sodales iaculis libero. Sed hendrerit tellus eu dui hendrerit rhoncus. Aliquam eget risus est.</p>
+                    <p class="about__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ipsum felis, ultricies ut semper malesuada, luctus at enim. Ut sodales iaculis libero. Sed hendrerit tellus eu dui hendrerit rhoncus. Aliquam eget risus est.</p>
+                </div>
+            </div>
         </div>
-  </article>  
+    </article>
 
     <footer class="footer">
-        <img src="assets/img/footer-logo.png" alt="footer-logo" class="footer-logo">
-        <p class="footer-txt">2021 Gatito Blog. All right reserved.</p>
+        <img src="assets/img/footer-logo.png" alt="Footer logo" class="footer__logo" />
+        <p class="footer__txt">2021 Gatito Blog. All rights reserved.</p>
     </footer>
-
+    
 </body>
 </html>

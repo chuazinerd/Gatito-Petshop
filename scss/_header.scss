@@ -1,14 +1,16 @@
 .header {
     font-family: Arial, Helvetica, sans-serif;
-    
-    &-logo {
+
+    &__logo {
         text-align: center;
     }
-    &-img {
+
+    &__img {
         max-width: 350px;
     }
+
     .menu {
-        &-list {
+        &__list {
             display: flex;
             justify-content: center;
             border-top: 1px solid $light-grey;
@@ -30,11 +32,12 @@
             }
         }
 
-        &-links {
+        &__links {
             position: relative;
             @include for-phone-only {
                 padding: 5px 0;
             }
+
             &:not(:last-child)::after {
                 content: "";
                 position: absolute;
@@ -44,16 +47,16 @@
                 margin: auto;
                 height: 15px;
                 width: 1px;
-                background-color: light-grey;  
+                background-color: $light-grey;
             }
         }
-        &-link {
+        &__link {
             padding: 0 25px;
             color: $dark-grey;
-            
+
             &:hover {
                 color: $purple;
             }
         }
-    }      
+    }
 }

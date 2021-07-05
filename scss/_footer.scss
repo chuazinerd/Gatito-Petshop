@@ -1,18 +1,20 @@
-/* perguntar sobre >>   > (transform: translateX(-50%);) */ 
+/* Este trecho de estilo se refere 
+ao rodapé do nosso blog*/
 .footer {
     text-align: center;
     padding: 20px 0;
     font-family: Arial, Helvetica, sans-serif;
+    // Este trecho de estilo posiciona o footer na parte de baixo da nossa tela
     position: relative;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
 
-    &-logo {
+    &__logo {
         max-width: 100px;
     }
-    
-    &-txt {
+
+    &__txt {
         margin: auto;
         @include fontSize(14px);
     }

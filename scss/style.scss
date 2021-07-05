@@ -1,17 +1,12 @@
-/* codigo para rodar o sass: 
-primero digite (cd projeto-sass)
-sass --watch scss/style.scss:css/style.css */
-$half-width: 50%;
-$full-width: 100%;
-$purple: #a050be;
-$light-grey: #eaeaea;
+/// Estas variaveis se referem as cores principais do nosso blog
+$purple: #A050BE;
+$light-grey: #eaeaeb;
 $dark-grey: #464646;
-$yellow: #fabe50;
+$yellow: #FABE50;
 $img-width: 45%;
 
 %no-decoration {text-decoration: none;}
 %u-decoration {text-decoration: underline;}
-
 
 @mixin reset-list {
     margin: 0;
@@ -19,13 +14,13 @@ $img-width: 45%;
     list-style: none;
 }
 
-@mixin flx ($property, $jty-cnt){
+@mixin flx($property, $jty-cnt) {
     display: flex;
-    #{property}: $jty-cnt;    
+    #{$property}: $jty-cnt;
 }
 
 @mixin for-phone-only {
-    @media (max-width: 767.98px) { @content;}
+    @media (max-width: 767.98px) { @content; }
 }
 
 @mixin for-tablet-only {
@@ -39,23 +34,22 @@ $img-width: 45%;
 @function calculateRem($size) {
     @return $size / 16px * 1rem;
 }
+
 @mixin fontSize($size) {
     font-size: calculateRem($size);
-    
 }
 
-@import 'header', 'footer', 'about', 'article';
+@import 'header', 'footer', 'about', 'article', 'collection', 'contact';
 
 $directions: top, bottom, left, right;
 $layout-margin-size: 10px;
 
 @each $direction in $directions {
-    %no-margin-#{direction} {margin-#{$direction}: 0;}
-    %default-margin-#{direction} {margin-#{$direction}: $layout-margin-size;}
-    %double-margin-#{direction} {margin-#{$direction}: $layout-margin-size * 2;}
-    %half-margin-#{direction} {margin-#{$direction}: $layout-margin-size / 2;}
+    %no-margin-#{$direction} {margin-#{$direction}: 0;}
+    %default-margin-#{$direction} {margin-#{$direction}: $layout-margin-size;}
+    %double-margin-#{$direction} {margin-#{$direction}: $layout-margin-size * 2;}
+    %half-margin-#{$direction} {margin-#{$direction}: $layout-margin-size / 2;}
 }
-
 
 .main {
     display: flex;
@@ -63,22 +57,22 @@ $layout-margin-size: 10px;
     flex-wrap: wrap;
     font-family: Arial, Helvetica, sans-serif;
 
-    &-content {
+    &__content {
         @include for-phone-only {
             width: 100%;
         }
-        width: 60%;
+        width: 70%;
         padding: 40px 8px;
     }
 
-    &-post {
+    &__post {
         text-align: center;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    &-title {
+    &__title {
         text-decoration: none;
         @include fontSize(22px);
         color: $dark-grey;
@@ -87,131 +81,132 @@ $layout-margin-size: 10px;
             color: $purple;
         }
     }
-    &-subtitle {
+
+    &__subtitle {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 10px;
-        margin-bottom: 20px;
+        @extend %default-margin-top, %double-margin-bottom;
     }
 
-    &-date {
-        margin: 0 10px;
+    &__date {
+        @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right;
         font-size: 12px;
         font-style: italic;
     }
-    &-tag {
+
+    &__tag {
         font-size: 14px;
         padding: 5px 7px;
         color: $purple;
         border: 1px solid $purple;
-        margin: 0 10 px;
+        @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right;
     }
 
-    &-details {
+    &__details {
         border: 1px solid $light-grey;
     }
 
-    &-img {
+    &__img {
         width: 100%;
     }
 
-    &-description {
+    &__description {
         padding: 40px 0 25px;
         max-width: 650px;
         margin-left: auto;
         margin-right: auto;
         font-size: 14px;
-
     }
 
-    &-btn {
+    &__btn {
         text-decoration: none;
         font-size: 16px;
-        letter-spacing:  1.5;
+        letter-spacing: 1.5;
         color: $purple;
         background-color: $yellow;
         padding: 10px 20px;
         transition: .3s;
         &:hover {
-        color: $yellow;
-        background-color: $purple;       
+            color: $yellow;
+            background-color: $purple;
         }
     }
 
-    &-info {
+    &__info {
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-top: 1px solid $light-grey;
         margin-top: 30px;
     }
-    &-author {
-        width: 50px;
+
+    &__author {
+        width: 50%;
         border-right: 1px solid $light-grey;
     }
-    &-p {
+
+    &__p {
         font-size: 14px;
         color: $dark-grey;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    &-comments {
-        width: 200px;
+
+    &__comments {
+        width: 50%;
     }
 
-    &-a {
+    &__a {
         text-decoration: none;
         font-size: 14px;
         color: $dark-grey;
         margin-top: 10px;
         margin-bottom: 10px;
-    }
-    :hover {
-        color: $purple;
+
+        &:hover {
+            color: $purple;
+        }
     }
 
-    &-sidebar {
+    &__sidebar {
         width: 25%;
         padding: 40px 10px;
     }
-   
-/* formatações da div do sidebar */    
+
     .sidebar {
-        &-top {
+        &__top {
             border: 1px solid $light-grey;
             padding: 15px 20px;
         }
-        &-title {
+        &__title {
             background-color: $yellow;
             text-align: center;
             padding: 10px 20px;
             margin: 0;
             letter-spacing: 1.5px;
         }
-        &-posts {
-            @include reset-list;  
+        &__posts {
+            @include reset-list;
         }
-        &-list {
+        &__list {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            align-items: center ;
+            align-items: center;
             padding: 15px 0;
             &:not(:last-child) {
                 border-bottom: 1px dashed $light-grey;
-            }   
-        }    
-        &-img {
+            }
+        }
+        &__img {
             width: 40%;
         }
-        
-        &-details {
+        &__details {
             width: 50%;
             padding-left: 10px;
         }
-
-        &-post-title {
+        &__post-title {
             font-size: 14px;
             color: $purple;
             @extend %no-decoration;
@@ -220,123 +215,9 @@ $layout-margin-size: 10px;
                 @extend %u-decoration;
             }
         }
-
-        &-post-date {
+        &__post-date {
             font-size: 12px;
             margin: 5px 0 0 0;
         }
-            
     }
-
 }
-
-.collection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Arial;
-    @include for-phone-only {   
-        width: 90%;
-    }
- 
-    &__post {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
- 
-    &__figure {
-        width: 50%;
-    }
- 
-    &__img {
-        width: 100%;
-    }
- 
-    &__about {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        text-align: center;
-    }
- 
-    &__title {
-        color: $dark-grey;
-        text-decoration: unset;
-        letter-spacing: 1px;
-        width: 100%;
-        margin: 10px 0;
- 
-        &:hover {
-            color: $purple;
-            text-decoration: underline;
-        }
-    }
- 
-    &__date {
-        @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right;
-        @include fontSize(12px);
-        font-style: italic;
-        width: 20%;
-        @include for-phone-only {
-            @include fontSize(10px);
-        }
-        @include for-tablet-only {   
-            width: 30%;
-        }
-    }
- 
-    &__tag {
-        @include fontSize(14px);
-        width: 50px;
-        padding: 5px 7px;
-        color: $purple;
-        border: 1px solid $purple;
-        @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right;
-        @include for-phone-only {   
-            width: 30px;
-            @include fontSize(12px);
-        }
-        @include for-tablet-only {   
-            width: 35px;
-            @include fontSize(12px);
-        }
-    }
- 
-    &__breadcrumb {
-        background-color: $light-grey;
-        text-align: center;
-        padding: 30px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
- 
-    .breadcrumb {
-        &__link {
-            @include fontSize(18px);
-            text-decoration: unset;
-            color: $dark-grey;
-            letter-spacing: 1px;
- 
-            &:hover {
-                color: $purple;
-                text-decoration: underline;
-            }
-        }
- 
-        &__img {
-            width: 14px;
-            margin: 10px;
-        }
-    }
- }
- 
